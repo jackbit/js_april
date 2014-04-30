@@ -1,0 +1,8 @@
+check process service_app with pidfile /Users/user/programming/meetup/js/meetup_april_pro/current/tmp/pids/app.pid
+  group staff
+  start program = "/Users/user/programming/meetup/js/meetup_april_pro/current/monit_app.start"
+    as uid deploy and gid staff
+  stop program = "/Users/user/programming/meetup/js/meetup_april_pro/current/monit_app.stop"
+    as uid deploy and gid staff
+  if failed unixsocket /Users/user/programming/meetup/js/meetup_april_pro/current/tmp/sockets/app.sock
+      protocol HTTP request "/?status" for 5 cycles then restart

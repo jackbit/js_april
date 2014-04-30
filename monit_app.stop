@@ -1,0 +1,4 @@
+#!/bin/bash
+cd /Users/user/programming/meetup/js/meetup_april_pro/current/
+echo "Killing NodeJS master process"
+kill -15 `cat /Users/user/programming/meetup/js/meetup_april_pro/current/tmp/pids/app.pid` || true

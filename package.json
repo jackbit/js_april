@@ -1,0 +1,12 @@
+{
+  "name"   : "AprilMeetup",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express.io"   : "> 0.0.0",
+    "node-clustrap": "https://github.com/jackbit/node-clustrap/tarball/v1"
+  },
+  "engines": {
+    "node": ">= 0.4.0"
+  }
+}

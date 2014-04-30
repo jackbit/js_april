@@ -1,0 +1,43 @@
+{
+  // Server to deploy to
+  "server": "user@127.0.0.1",
+
+  // Deploy to this dir on server
+  "server_dir": "/Users/user/programming/meetup/js/meetup_april_pro",
+
+  // Git repository, only support git right now
+  "repo": "git@github.com:jackbit/js_april.git",
+
+  // If you have more than one project in your git repo,
+  // e.g. "projects/v1"
+  "prj_git_relative_dir": "",
+
+  // Branch to be checkout and deploy
+  "branch": "master",
+
+  // If remove git cloned directory then git clone again,
+  // default is false
+  "force_regenerate_git_dir": false,
+
+  // Directories of your project in this array will use a
+  // symbolic instead create every time when run deploy
+  "shared_dirs": [
+    "node_modules",
+    "logs"
+  ],
+
+  // How many release snapshots keep away from auto cleanup,
+  // default is 10 if not presents
+  "history_releases_count": 5,
+
+  // Run customize scripts before run
+  "prerun": [
+    "npm install",
+    "npm test",
+    "rm -rf /var/tmp/* || true",
+    "kill -15 `cat tmp/pids/app.pid` || true"
+  ],
+
+  // Start run your project
+  "run_cmd": "NODE_ENV=production node app > /dev/null 2>&1 & echo $! > tmp/pids/app.pid"
+}

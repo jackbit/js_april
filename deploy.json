@@ -26,5 +26,5 @@
     "kill -15 `cat tmp/pids/app.pid` || true"
   ],
 
-  "run_cmd": "NODE_ENV=production node app > /dev/null 2>&1 & echo $! > tmp/pids/app.pid"
+  "run_cmd": "NODE_ENV=production node server > /dev/null 2>&1 & echo $! > tmp/pids/app.pid"
 }

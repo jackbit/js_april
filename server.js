@@ -2,7 +2,7 @@ var express = require('express.io'),
     Clustrap = require('clustrap'),
     app = express(),
     httpOptions = { 
-      workers: 1, 
+      workers: 3, 
       port: 3000,
       sock: './tmp/sockets/app.sock'
     },
@@ -23,7 +23,7 @@ app.set('views', __dirname + '/../views');
 app.set('view engine', 'jade');
 
 app.get('/', function(req, res, next){
-  res.send('I am '+environment);
+  res.send('I am changed and in '+environment);
 })
 
 var service = new Clustrap(app, httpOptions);
